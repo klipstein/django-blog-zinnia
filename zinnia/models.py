@@ -146,7 +146,7 @@ class Entry(models.Model):
         """Return published comments"""
         # moderator approval is used by django.contrib.comments admin view, 
         # when approving a comment
-        return self.discussions.filter(Q(flags=None) | Q(flags__flag='moderator approval')
+        return self.discussions.filter(Q(flags=None) | Q(flags__flag='moderator approval'))
 
     @property
     def pingbacks(self):
